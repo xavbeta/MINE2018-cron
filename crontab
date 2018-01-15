@@ -1,6 +1,6 @@
-1 4 * * * /usr/bin/curl -i http://localhost:8087/topurls >/tmp/topurls_cache.log 2>&1
-11 4 * * * /usr/bin/curl -i http://localhost:8087/topdomains >/tmp/topdomains_cache.log 2>&1
-21 * * * * /usr/bin/curl -i http://localhost:8087/hotness >/tmp/hotness_cache.log 2>&1
-15 * * * * /usr/bin/curl -i http://localhost:8087/counts >/tmp/counts_cache.log 2>&1
+1 4 * * * /usr/bin/curl -i http://$SERVER_PORT_8087_TCP_ADDR:8080/topurls >/tmp/topurls_cache.log 2>&1
+11 4 * * * /usr/bin/curl -i http://$SERVER_PORT_8087_TCP_ADDR:8080/topdomains >/tmp/topdomains_cache.log 2>&1
+21 * * * * /usr/bin/curl -i http://$SERVER_PORT_8087_TCP_ADDR:8080/hotness >/tmp/hotness_cache.log 2>&1
+15 * * * * /usr/bin/curl -i http://$SERVER_PORT_8087_TCP_ADDR:8080/counts >/tmp/counts_cache.log 2>&1
 * * * * * echo "$(date)" >/tmp/echo.log
 # An empty line is required at the end of this file for a valid cron file.
